@@ -32,6 +32,7 @@
   flex-direction: column;
   gap: 32px;
   grid-row-start: 2;
+  min-height: 100vh;
 }
 
 .main ol {
@@ -165,4 +166,206 @@ a.secondary {
   .logo {
     filter: invert();
   }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 80vh;
+  background-color: #171717;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(23, 23, 23, 0.9));
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroContent {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.heroText {
+  max-width: 64rem;
+}
+
+.heroText h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .heroText h1 {
+    font-size: 3.75rem;
+  }
+}
+
+.heroText p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .heroText p {
+    font-size: 1.5rem;
+  }
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Buttons */
+.primaryButton {
+  display: inline-block;
+  background-color: white;
+  color: #171717;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.primaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.secondaryButton {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: 2px solid white;
+  transition: background-color 0.2s;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Introduction Section */
+.introduction {
+  padding: 5rem 1rem;
+  background-color: white;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.introduction h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #171717;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .introduction h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.introduction p {
+  font-size: 1.125rem;
+  color: #666;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+/* Highlights Section */
+.highlights {
+  padding: 5rem 1rem;
+  background-color: #fafafa;
+}
+
+.highlights h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #171717;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.eventsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .eventsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.eventCard {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+}
+
+.eventCard:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.eventImageContainer {
+  position: relative;
+  height: 12rem;
+}
+
+.eventImage {
+  object-fit: cover;
+}
+
+.eventContent {
+  padding: 1.5rem;
+}
+
+.eventCategory {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+.eventContent h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #171717;
+  margin-top: 0.5rem;
+}
+
+.eventContent time {
+  display: block;
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.viewAllContainer {
+  text-align: center;
+  margin-top: 3rem;
 }
