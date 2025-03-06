@@ -22,7 +22,7 @@ const AboutUsSection = () => {
             <ul>
               <li><strong>Parkour:</strong> Nuestra disciplina insignia, para todas las edades y niveles</li>
               <li><strong>Circo para niños:</strong> Desarrollando habilidades motoras, creatividad y confianza desde temprana edad</li>
-              <li><strong>Artes marciales:</strong> Clases de Wushu y otras disciplinas que fomentan la concentración, el respeto y la disciplina</li>
+              <li><strong>Artes marciales:</strong> Clases de Wushu, Taekwondo, Karate y Kobudo. Disciplinas que fomentan la concentración, el respeto y la disciplina</li>
               <li><strong>Actividades complementarias:</strong> Talleres, encuentros y eventos que conectan el movimiento con la expresión artística y cultural</li>
             </ul>
           </div>

@@ -90,21 +90,21 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
-  // Function to scroll to section with GSAP
+  // Function to scroll to section with smooth animation
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       // Get the section's position
       const sectionTop = section.getBoundingClientRect().top + window.scrollY;
       
-      // Use GSAP to scroll with bounce effect
+      // Use GSAP to scroll with smooth animation
       gsap.to(window, {
-        duration: 1.2,
+        duration: 1,
         scrollTo: {
-          y: sectionTop,
+          y: sectionTop - 52,
           autoKill: false
         },
-        ease: "bounce.out" // Bounce effect
+        ease: "power3.inOut" // Smooth, professional easing
       });
     }
   };
@@ -135,7 +135,7 @@ const Navigation = () => {
             onClick={(e) => handleSectionClick(e, 'about-us')}
             className={pathname === '/' && window.location.hash === '#about-us' ? styles.active : ''}
           >
-            Sobre Nosotros
+            Sobre el CECAM
           </a>
           <Link 
             href="/schedule" 
