@@ -1,0 +1,156 @@
+.main {
+  min-height: 100vh;
+  padding-top: 6rem;
+  background-color: #171717;
+  color: #ffffff;
+}
+
+.schedule {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    font-family: var(--font-montserrat);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgba(128, 90, 213, 0.8);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.dayColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dayHeader {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.activitiesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.activityCard {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  h3 {
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 0.25rem;
+    color: #000000;
+  }
+
+  .ages {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+    margin-bottom: 0.25rem;
+    color: #000000;
+  }
+
+  .time {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+    color: #000000;
+  }
+}
+
+// Colores para las actividades
+.orange {
+  background-color: #F5A623;
+}
+
+.yellow {
+  background-color: #F8E71C;
+}
+
+.green {
+  background-color: #7ED321;
+}
+
+.pink {
+  background-color: #D6A5A5;
+}
+
+.lightblue {
+  background-color: #4A90E2;
+}
+
+.teal {
+  background-color: #50E3C2;
+}
+
+.coral {
+  background-color: #FF6B6B;
+}
+
+.purple {
+  background-color: #9013FE;
+  color: #ffffff;
+
+  h3, .ages, .time {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 1024px) {
+  .scheduleGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule {
+    padding: 1rem;
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .scheduleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .scheduleGrid {
+    grid-template-columns: 1fr;
+  }
+} 

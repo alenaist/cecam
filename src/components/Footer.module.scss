@@ -1,0 +1,79 @@
+.footer {
+  background-color: #171717;
+  padding: 3rem 2rem 2rem;
+  color: #ffffff;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+.logo {
+  font-family: var(--font-big-shoulders-stencil);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.info, .contact {
+  p {
+    font-family: var(--font-montserrat);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+  }
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-family: var(--font-montserrat);
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #E1306C; /* Instagram color */
+  }
+  
+  span {
+    font-size: 0.9rem;
+  }
+}
+
+.instagramIcon {
+  color: currentColor;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  text-align: center;
+  
+  p {
+    font-family: var(--font-montserrat);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+} 

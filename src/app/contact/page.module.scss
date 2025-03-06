@@ -1,0 +1,159 @@
+.main {
+  min-height: 100vh;
+  padding-top: 6rem;
+  background-color: #171717; /* Dark background */
+}
+
+.contact {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    font-family: var(--font-montserrat);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #ffffff; /* White text */
+    text-align: center;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.info {
+  h2 {
+    font-family: var(--font-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff; /* White text */
+  }
+
+  p {
+    font-family: var(--font-montserrat);
+    color: #e5e5e5; /* Light gray text */
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-family: var(--font-montserrat);
+    font-size: 1rem;
+    color: #ffffff; /* White text */
+  }
+
+  input, textarea {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff; /* White text */
+    font-family: var(--font-montserrat);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.submitButton {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #ffffff; /* White background */
+  color: #171717; /* Dark text */
+  font-family: var(--font-montserrat);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: #e5e5e5; /* Light gray on hover */
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.statusMessage {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-montserrat);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e; /* Bright green */
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444; /* Bright red */
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 1rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .info {
+    text-align: left; /* Align text to the left in mobile */
+    padding-left: 1rem; /* Add padding to the left for better readability */
+
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+} 

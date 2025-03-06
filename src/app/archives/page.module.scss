@@ -1,0 +1,43 @@
+.main {
+  min-height: 100vh;
+  padding-top: 6rem;
+  background-color: #ffffff;
+}
+
+.archives {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    font-family: var(--font-montserrat);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #000000;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+
+  p {
+    font-family: var(--font-montserrat);
+    color: #333333;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .archives {
+    padding: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+} 

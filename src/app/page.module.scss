@@ -30,9 +30,10 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  gap: 0;
   min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .main ol {
@@ -164,15 +165,21 @@ a.secondary {
 
 @media (prefers-color-scheme: dark) {
   .logo {
-    filter: invert();
+    filter: invert(1);
   }
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  height: 80vh;
+  height: 100vh;
   background-color: #171717;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1; /* Lower z-index so content can scroll over it */
 }
 
 .heroOverlay {
@@ -197,31 +204,6 @@ a.secondary {
 
 .heroText {
   max-width: 64rem;
-}
-
-.heroText h1 {
-  font-size: 2.25rem;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .heroText h1 {
-    font-size: 3.75rem;
-  }
-}
-
-.heroText p {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 768px) {
-  .heroText p {
-    font-size: 1.5rem;
-  }
 }
 
 .heroCtas {
@@ -264,7 +246,8 @@ a.secondary {
 /* Introduction Section */
 .introduction {
   padding: 5rem 1rem;
-  background-color: white;
+  background-color: #fff;
+  height: 100vh;
 }
 
 .container {
@@ -368,4 +351,8 @@ a.secondary {
 .viewAllContainer {
   text-align: center;
   margin-top: 3rem;
+}
+
+.someClass {
+  filter: invert(1);
 }
