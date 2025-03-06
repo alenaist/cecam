@@ -135,17 +135,20 @@
 }
 
 .mobileMenu {
+  height: 100vh;
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #171717;
+  background-color: rgba(23, 23, 23, 0.98);
+  backdrop-filter: blur(10px);
   z-index: 100;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  overflow-y: auto;
   
   &.open {
     opacity: 1;
@@ -160,6 +163,7 @@
   justify-content: center;
   height: 100%;
   gap: 2rem;
+  padding: 4rem 2rem 2rem;
   
   a {
     font-family: var(--font-montserrat);
@@ -169,6 +173,7 @@
     font-weight: 500;
     transition: color 0.2s ease;
     position: relative;
+    text-align: center;
     
     &:hover, &.active {
       color: rgba(255, 255, 255, 0.9);
