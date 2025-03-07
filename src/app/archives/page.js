@@ -57,7 +57,7 @@ const ArchivesPage = () => {
       
       if (video && videoData) {
         // Establecer el tiempo específico para el thumbnail si está definido
-        if (videoData.thumbnailTime) {
+        if (videoData.thumbnailTime !== undefined) {
           // Usar un timeout para asegurarse de que el video tenga tiempo de cargarse
           setTimeout(() => {
             if (video.readyState >= 2) { // HAVE_CURRENT_DATA o superior
@@ -143,22 +143,6 @@ const ArchivesPage = () => {
       src: '/old1.jpg',
       alt: 'El CECAM antes del CECAM',
       caption: 'El CECAM antes del CECAM',
-      size: 'large'
-    },
-        {
-      type: 'image',
-      id: 'image4',
-      src: '/old4.jpg',
-      alt: 'Inicios',
-      caption: 'Inicios',
-      size: 'regular'
-    },
-         {
-      type: 'image',
-      id: 'image3',
-      src: '/oldPA.jpg',
-      alt: 'La planta alta',
-      caption: 'La planta alta',
       size: 'regular'
     },
     {
@@ -167,9 +151,8 @@ const ArchivesPage = () => {
       src: '/old2.jpg',
       alt: 'El equipo',
       caption: 'El equipo',
-      size: 'large'
-    },
- 
+      size: 'regular'
+    }
   ];
 
   // Renderizar un elemento de media (imagen o video)
@@ -215,6 +198,9 @@ const ArchivesPage = () => {
               // Evitar que el clic en el video se propague al contenedor
               e.stopPropagation();
             }}
+            // Atributos para SEO y accesibilidad
+            title={item.caption}
+            aria-label={item.caption}
           />
           {!isPlaying && (
             <div 
@@ -231,18 +217,28 @@ const ArchivesPage = () => {
   };
 
   return (
-    <main className={styles.main}>
-      <div className={styles.archives}>
-        <h1>Nuestra Historia</h1>
-        <p>
-          El CECAM nace en el 2017 del sueño de un grupo de amigos unidos por el Parkour. Un lugar pensado para crecer, compartir y promover el movimiento y el arte. Inicialmente un galpon abandonado transformado en un espacio para el encuentro de personas con ganas de aprender y enseñar.
-        </p>
-        
-        <div className={styles.photoMasonry} ref={masonryRef}>
-          {mediaItems.map(renderMediaItem)}
-        </div>
-      </div>
-    </main>
+    <>
+      <main className={styles.main}>
+        <article className={styles.archives}>
+          <header>
+            <h1>Nuestra Historia</h1>
+            <p itemProp="description">
+              El CECAM nace en el 2017 del sueño de un grupo de amigos unidos por el movimiento. Un lugar para crecer, compartir y promover el movimiento y el arte en todas sus posibles formas. Inicialmente un galpon abandonado que tras largos meses de trabajo es convertido en un espacio para el encuentro de personas con ganas de aprender y enseñar.
+            </p>
+          </header>
+          
+          <section 
+            className={styles.photoMasonry} 
+            ref={masonryRef}
+            aria-label="Galería de fotos y videos históricos del CECAM"
+            itemScope 
+            itemType="http://schema.org/ImageGallery"
+          >
+            {mediaItems.map(renderMediaItem)}
+          </section>
+        </article>
+      </main>
+    </>
   );
 };
 
