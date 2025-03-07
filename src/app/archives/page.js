@@ -136,7 +136,14 @@ const ArchivesPage = () => {
       size: 'large',
       thumbnailTime: 0
     },
-
+    {
+      type: 'image',
+      id: 'image6',
+      src: '/old2.jpg',
+      alt: 'El equipo',
+      caption: 'El equipo',
+      size: 'large'
+    },
     {
       type: 'image',
       id: 'image5',
@@ -145,14 +152,7 @@ const ArchivesPage = () => {
       caption: 'El CECAM antes del CECAM',
       size: 'regular'
     },
-    {
-      type: 'image',
-      id: 'image6',
-      src: '/old2.jpg',
-      alt: 'El equipo',
-      caption: 'El equipo',
-      size: 'regular'
-    }
+
   ];
 
   // Renderizar un elemento de media (imagen o video)
