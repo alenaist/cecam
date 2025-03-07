@@ -110,7 +110,7 @@ const ArchivesPage = () => {
       src: '/cecamVideo01.mp4',
       caption: 'Comienza la obra',
       size: 'large',
-      thumbnailTime: 4
+      thumbnailTime: 0
     },
     {
       type: 'image',
@@ -134,7 +134,7 @@ const ArchivesPage = () => {
       src: '/cecamVideo02.mp4',
       caption: 'Los mobos',
       size: 'large',
-      thumbnailTime: 10
+      thumbnailTime: 0
     },
 
     {
