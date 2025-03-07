@@ -3,6 +3,7 @@ import { Big_Shoulders_Stencil_Display } from "next/font/google";
 import { Montserrat } from "next/font/google";
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 const geistSans = Geist({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
         <Navigation />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
