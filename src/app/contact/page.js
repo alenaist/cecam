@@ -52,7 +52,7 @@ const ContactPage = () => {
         <div className={styles.content}>
           <div className={styles.info}>
             <h2>Ubicación</h2>
-            <p>Buenos Aires, Argentina</p>
+            <p>Chile 2958 - Balvanera, Buenos Aires, Argentina.</p>
             <h2>Email</h2>
             <p>info@cecam.com.ar</p>
             <h2>Teléfono</h2>
