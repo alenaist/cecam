@@ -184,7 +184,7 @@ const Navigation = () => {
             href="/archives" 
             className={pathname === '/archives' ? styles.active : ''}
           >
-            Archivo
+            Historia
           </Link>
           <Link 
             href="/contact" 
@@ -239,7 +239,7 @@ const Navigation = () => {
             href="/archives" 
             className={pathname === '/archives' ? styles.active : ''}
           >
-            Archivo
+            Historia
           </Link>
           <Link 
             href="/contact" 
