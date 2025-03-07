@@ -3,14 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { gsap } from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import styles from './Navigation.module.scss';
-
-// Register ScrollToPlugin
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollToPlugin);
-}
 
 // Páginas con fondo claro
 const lightBackgroundPages = ['/archives', '/contact', '/schedule'];
@@ -18,13 +11,53 @@ const lightBackgroundPages = ['/archives', '/contact', '/schedule'];
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState('');
+  const [gsapLoaded, setGsapLoaded] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   
   // Verificar si la página actual tiene fondo claro
   const isLightPage = lightBackgroundPages.includes(pathname);
 
+  // Load GSAP and register plugins only on client side
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    // Dynamic import for GSAP
+    const loadGsap = async () => {
+      const gsapModule = await import('gsap');
+      const { ScrollToPlugin } = await import('gsap/ScrollToPlugin');
+      
+      // Register the plugin
+      gsapModule.gsap.registerPlugin(ScrollToPlugin);
+      
+      // Save gsap to state so we can use it later
+      setGsapLoaded(true);
+      
+      // Save gsap to window for easy access in scrollToSection
+      window.gsapInstance = gsapModule.gsap;
+    };
+    
+    loadGsap();
+  }, []);
+
+  // Get current hash on client side
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    setCurrentHash(window.location.hash);
+    
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+    
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -40,6 +73,8 @@ const Navigation = () => {
 
   // Prevent scrolling when menu is open
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const originalStyle = window.getComputedStyle(document.body).overflow;
     
     if (isMenuOpen) {
@@ -92,13 +127,15 @@ const Navigation = () => {
 
   // Function to scroll to section with smooth animation
   const scrollToSection = (sectionId) => {
+    if (typeof window === 'undefined' || !gsapLoaded) return;
+    
     const section = document.getElementById(sectionId);
     if (section) {
       // Get the section's position
       const sectionTop = section.getBoundingClientRect().top + window.scrollY;
       
       // Use GSAP to scroll with smooth animation
-      gsap.to(window, {
+      window.gsapInstance.to(window, {
         duration: 1,
         scrollTo: {
           y: sectionTop - 52,
@@ -133,7 +170,7 @@ const Navigation = () => {
           <a 
             href="#about-us" 
             onClick={(e) => handleSectionClick(e, 'about-us')}
-            className={pathname === '/' && window.location.hash === '#about-us' ? styles.active : ''}
+            className={pathname === '/' && currentHash === '#about-us' ? styles.active : ''}
           >
             Sobre el CECAM
           </a>
@@ -188,7 +225,7 @@ const Navigation = () => {
           <a 
             href="#about-us" 
             onClick={(e) => handleSectionClick(e, 'about-us')}
-            className={pathname === '/' && window.location.hash === '#about-us' ? styles.active : ''}
+            className={pathname === '/' && currentHash === '#about-us' ? styles.active : ''}
           >
             Sobre Nosotros
           </a>
