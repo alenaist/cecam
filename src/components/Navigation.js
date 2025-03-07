@@ -227,7 +227,7 @@ const Navigation = () => {
             onClick={(e) => handleSectionClick(e, 'about-us')}
             className={pathname === '/' && currentHash === '#about-us' ? styles.active : ''}
           >
-            Sobre Nosotros
+            Sobre el Cecam
           </a>
           <Link 
             href="/schedule" 
