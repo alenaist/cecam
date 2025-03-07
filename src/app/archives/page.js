@@ -125,7 +125,7 @@ const ArchivesPage = () => {
       id: 'image2',
       src: '/OLD3.jpg',
       alt: 'La luz al final del túnel',
-      caption: 'La luz al final del túnel',
+      caption: 'La luz',
       size: 'regular'
     },
     {

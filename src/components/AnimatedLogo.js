@@ -23,7 +23,7 @@ const AnimatedLogo = () => {
 
     // Split into characters
     const chars = new SplitType(logoRef.current, {
-      types: 'chars',
+      types: 'words',
       tagName: 'span'
     });
 
@@ -40,21 +40,20 @@ const AnimatedLogo = () => {
     gsap.set(containerRef.current, { visibility: 'visible', opacity: 1 });
     
     // Animate characters
-    tl.from(chars.chars, {
+    tl.from(chars.words, {
       opacity: 0,
-      y: 150,
-      stagger: 0.05,
+      letterSpacing: 40,
       duration: 1,
       ease: "power2.out"
     })
     // Animate words
     .from(words.words, {
       opacity: 0,
-      y: -20,
+      y: 10,
       stagger: 0.1,
-      duration: 0.5,
+      duration: 1,
       ease: "power2.out"
-    }, "-=0.3"); // Start slightly before the previous animation ends
+    }, "-=0.8"); // Start slightly before the previous animation ends
 
     return () => {
       chars.revert();
