@@ -105,43 +105,9 @@ const ArchivesPage = () => {
   // Datos de las imágenes y videos para el masonry
   const mediaItems = [
     {
-      type: 'video',
-      id: 'video1',
-      src: '/cecamVideo01.mp4',
-      caption: 'Comienza la obra',
-      size: 'large',
-      thumbnailTime: 0
-    },
-    {
-      type: 'image',
-      id: 'image1',
-      src: '/oldConstr.jpg',
-      alt: 'Trabajando en los obstáculos',
-      caption: 'Trabajando en los obstáculos',
-      size: 'regular'
-    },
-    {
-      type: 'image',
-      id: 'image2',
-      src: '/OLD3.jpg',
-      alt: 'La luz al final del túnel',
-      caption: 'La luz',
-      size: 'regular'
-    },
-    {
-      type: 'video',
-      id: 'video2',
-      src: '/cecamVideo02.mp4',
-      caption: 'Los mobos',
-      size: 'large',
-      thumbnailTime: 0
-    },
-    {
-      type: 'image',
-      id: 'image6',
-      src: '/old2.jpg',
-      alt: 'El equipo',
-      caption: 'El equipo',
+      type: 'text',
+      id: 'intro-text',
+      content: 'El CECAM nace en el 2017 del sueño de un grupo de amigos unidos por el movimiento. Un lugar para crecer, compartir y promover el movimiento y el arte en todas sus posibles formas. Un galpon convertido en un espacio para el encuentro de personas con ganas de aprender y enseñar.',
       size: 'large'
     },
     {
@@ -153,6 +119,62 @@ const ArchivesPage = () => {
       size: 'regular'
     },
 
+
+    {
+      type: 'image',
+      id: 'image2',
+      src: '/OLD3.jpg',
+      alt: 'La luz al final del túnel',
+      caption: 'La luz',
+      size: 'regular'
+    },
+
+    {
+      type: 'video',
+      id: 'video1',
+      src: '/cecamVideo01.mp4',
+      caption: 'Comienza la obra',
+      size: 'large',
+      thumbnailTime: 0
+    },
+   
+
+
+
+    {
+      type: 'video',
+      id: 'video2',
+      src: '/cecamVideo02.mp4',
+      caption: 'Los mobos',
+      size: 'large',
+      thumbnailTime: 0
+    },
+
+
+    {
+      type: 'image',
+      id: 'image1',
+      src: '/oldConstr.jpg',
+      alt: 'Trabajando en los obstáculos',
+      caption: 'Trabajando en los obstáculos',
+      size: 'regular'
+    },
+    {
+      type: 'image',
+      id: 'image6',
+      src: '/old4.jpg',
+      alt: 'El equipo',
+      caption: 'inicios',
+      size: 'regular'
+    },
+    {
+      type: 'image',
+      id: 'image6',
+      src: '/old2.jpg',
+      alt: 'El equipo',
+      caption: 'El equipo',
+      size: 'large'
+    }
   ];
 
   // Renderizar un elemento de media (imagen o video)
@@ -212,6 +234,14 @@ const ArchivesPage = () => {
           <div className={styles.imageCaption}>{item.caption}</div>
         </div>
       );
+    } else if (item.type === 'text') {
+      return (
+        <div key={index} className={`${itemClass} ${styles.textContainer}`}>
+          <div className={styles.textContent} itemProp="description">
+            {item.content}
+          </div>
+        </div>
+      );
     }
     return null;
   };
@@ -220,13 +250,6 @@ const ArchivesPage = () => {
     <>
       <main className={styles.main}>
         <article className={styles.archives}>
-          <header>
-            <h1>Nuestra Historia</h1>
-            <p itemProp="description">
-              El CECAM nace en el 2017 del sueño de un grupo de amigos unidos por el movimiento. Un lugar para crecer, compartir y promover el movimiento y el arte en todas sus posibles formas. Inicialmente un galpon abandonado que tras largos meses de trabajo es convertido en un espacio para el encuentro de personas con ganas de aprender y enseñar.
-            </p>
-          </header>
-          
           <section 
             className={styles.photoMasonry} 
             ref={masonryRef}

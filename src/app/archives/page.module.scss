@@ -43,14 +43,12 @@
 .masonryItem {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   height: 100%; // Asegurar que todos los elementos ocupen el 100% de la altura disponible
   
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
   }
   
   // Estado de carga
@@ -336,6 +334,47 @@
   
   &:hover {
     background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+// Estilos para el contenedor de texto
+.textContainer {
+  background-color: #f8f8f8;
+  padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  .textContent {
+    font-family: var(--font-montserrat);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333333;
+    text-align: left;
+    max-width: 100%;
+    position: relative;
+  }
+}
+
+// Responsive para el contenedor de texto
+@media (max-width: 768px) {
+  .textContainer {
+    padding: 1.5rem;
+    
+    .textContent {
+      font-size: 1rem;
+      line-height: 1.6;
+      
+      &::before, &::after {
+        font-size: 3rem;
+      }
+    }
   }
 }
 
