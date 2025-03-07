@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           <div className={styles.info}>
             <p>Centro Cultural de las Artes del Movimiento</p>
-            <p>Balvanera, Buenos Aires, Argentina</p>
+            <p>Chile 2958 - Balvanera, Buenos Aires, Argentina</p>
           </div>
           <div className={styles.contact}>
             <p>info@cecam.com.ar</p>
