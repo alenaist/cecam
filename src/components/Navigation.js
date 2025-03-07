@@ -178,7 +178,7 @@ const Navigation = () => {
             href="/schedule" 
             className={pathname === '/schedule' ? styles.active : ''}
           >
-            Grilla de Horarios
+            Grilla de Actividades
           </Link>
           <Link 
             href="/archives" 
@@ -233,7 +233,7 @@ const Navigation = () => {
             href="/schedule" 
             className={pathname === '/schedule' ? styles.active : ''}
           >
-            Grilla de Horarios
+            Grilla de Actividades
           </Link>
           <Link 
             href="/archives" 
