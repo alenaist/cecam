@@ -76,7 +76,7 @@ const AboutUsSection = () => {
           </div>
           
           <div className={styles.section}>
-            <h3>Donde estamos:</h3>
+            <h3>Donde estamos</h3>
             <p>
               Ubicados en Chile 2958, Balvanera, CECAM es más que un lugar de entrenamiento: somos un punto de encuentro para la comunidad. Nuestras instalaciones están adaptadas para la práctica segura de todas nuestras disciplinas, creando un ambiente donde conviven personas de todas las edades unidas por el interés en el movimiento, la cultura y el arte.
             </p>

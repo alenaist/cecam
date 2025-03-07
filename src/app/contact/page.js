@@ -55,10 +55,9 @@ const ContactPage = () => {
             <p>Chile 2958 - Balvanera, Buenos Aires, Argentina.</p>
             <h2>Email</h2>
             <p>info@cecam.com.ar</p>
-            <h2>Teléfono</h2>
-            <p>011 5853-4817</p>
           </div>
           <form className={styles.form} onSubmit={handleSubmit}>
+            <p className={styles.formDescription}>Escribinos por cualquier consulta sobre las clases. Tambien alquilamos el espacio para eventos y actividades en los horarios libres de clases.</p>
             <div className={styles.formGroup}>
               <label htmlFor="name">Nombre</label>
               <input

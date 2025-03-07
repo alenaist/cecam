@@ -17,6 +17,7 @@
   grid-template-columns: 1fr 2fr 1fr;
   gap: 2rem;
   margin-bottom: 2rem;
+  align-items: center;
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -42,9 +43,21 @@
   }
 }
 
-.socialLink {
+.contact {
   display: flex;
+  flex-direction: column;
+  
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.socialLink {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
@@ -53,17 +66,24 @@
   margin-top: 1rem;
   transition: color 0.3s ease;
   
+  @media (max-width: 768px) {
+    margin: 1rem auto 0;
+  }
+  
   &:hover {
     color: #E1306C; /* Instagram color */
   }
   
   span {
     font-size: 0.9rem;
+    line-height: 1;
   }
 }
 
 .instagramIcon {
   color: currentColor;
+  display: inline-flex;
+  vertical-align: middle;
 }
 
 .copyright {
@@ -75,5 +95,14 @@
     font-family: var(--font-montserrat);
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 } 

@@ -49,6 +49,13 @@
   gap: 1.5rem;
 }
 
+.formDescription {
+  font-family: var(--font-montserrat);
+  font-size: 1rem;
+  color: #ffffff; /* White text */
+  margin-bottom: 1rem;
+}
+
 .formGroup {
   display: flex;
   flex-direction: column;
