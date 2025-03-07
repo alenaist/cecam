@@ -36,7 +36,7 @@ const AboutUsSection = () => {
               <div className={styles.gallery}>
                 <div className={styles.galleryItem}>
                   <Image 
-                    src="/salaPB2.jpg" 
+                    src="/pb.webp" 
                     alt="Vista amplia de la sala planta baja de CECAM" 
                     width={900} 
                     height={600} 
@@ -46,7 +46,7 @@ const AboutUsSection = () => {
                 </div>
                 <div className={styles.galleryItem}>
                   <Image 
-                    src="/sala02.jpg" 
+                    src="/pa.webp" 
                     alt="Sala de entrenamiento de CECAM" 
                     width={600} 
                     height={800} 
@@ -55,7 +55,7 @@ const AboutUsSection = () => {
                 </div>
                 <div className={styles.galleryItem}>
                   <Image 
-                    src="/sala01.jpg" 
+                    src="/terraza.webp" 
                     alt="Sala principal de CECAM" 
                     width={600} 
                     height={400} 
@@ -64,7 +64,7 @@ const AboutUsSection = () => {
                 </div>
                 <div className={styles.galleryItem}>
                   <Image 
-                    src="/salaPB.jpg" 
+                    src="/pa.webp" 
                     alt="Otra vista de la sala planta baja de CECAM" 
                     width={500} 
                     height={400} 
