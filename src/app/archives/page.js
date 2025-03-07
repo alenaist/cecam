@@ -108,7 +108,7 @@ const ArchivesPage = () => {
       type: 'video',
       id: 'video1',
       src: '/cecamVideo01.mp4',
-      caption: 'Entrenamiento en CECAM',
+      caption: 'Comienza la obra',
       size: 'large',
       thumbnailTime: 4
     },
