@@ -78,7 +78,7 @@ const ArchivesPage = () => {
     {
       type: 'text',
       id: 'intro-text',
-      content: '"CECAM surgió en 2017 de la visión colectiva de un grupo de amigos apasionados por el movimiento. Es un espacio dedicado al crecimiento, intercambio y fomento del movimiento y el arte en todas sus expresiones. Lo que antes era un simple galpón, hoy se ha transformado en un punto de encuentro donde personas entusiastas confluyen para compartir conocimientos y aprendizajes.',
+      content: 'CECAM surgió en 2017 de la visión colectiva de un grupo de amigos apasionados por el movimiento. Es un espacio dedicado al crecimiento, intercambio y fomento del movimiento y el arte en todas sus expresiones. Lo que antes era un simple galpón, hoy se ha transformado en un punto de encuentro donde personas entusiastas confluyen para compartir conocimientos y aprendizajes.',
       size: 'large'
     },
     {
