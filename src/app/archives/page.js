@@ -33,22 +33,7 @@ const ArchivesPage = () => {
     
     setPlayingVideos(initialPlayingState);
     setLoadingImages(initialLoadingState);
-    
-    // Animar la aparición de los elementos
-    setTimeout(() => {
-      const items = masonryRef.current.querySelectorAll(`.${styles.masonryItem}`);
-      
-      items.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        
-        setTimeout(() => {
-          item.style.opacity = '1';
-          item.style.transform = 'translateY(0)';
-        }, 100 + (index * 100));
-      });
-    }, 300);
+  
 
     // Configurar los event listeners para los videos
     Object.keys(videoRefs.current).forEach(key => {
@@ -56,22 +41,7 @@ const ArchivesPage = () => {
       const videoData = mediaItems.find(item => item.type === 'video' && item.id === key);
       
       if (video && videoData) {
-        // Establecer el tiempo específico para el thumbnail si está definido
-        if (videoData.thumbnailTime !== undefined) {
-          // Usar un timeout para asegurarse de que el video tenga tiempo de cargarse
-          setTimeout(() => {
-            if (video.readyState >= 2) { // HAVE_CURRENT_DATA o superior
-              video.currentTime = videoData.thumbnailTime;
-              video.pause();
-            } else {
-              video.addEventListener('loadeddata', () => {
-                video.currentTime = videoData.thumbnailTime;
-                video.pause();
-              }, { once: true });
-            }
-          }, 500);
-        }
-        
+    
         // Detectar cuando el video comienza a reproducirse
         video.addEventListener('play', () => {
           setPlayingVideos(prev => ({ ...prev, [key]: true }));
@@ -83,6 +53,7 @@ const ArchivesPage = () => {
         });
       }
     });
+    console.log('hi');
   }, []);
 
   // Manejar clic en el grid item de video
@@ -107,7 +78,7 @@ const ArchivesPage = () => {
     {
       type: 'text',
       id: 'intro-text',
-      content: 'El CECAM nace en el 2017 del sueño de un grupo de amigos unidos por el movimiento. Un lugar para crecer, compartir y promover el movimiento y el arte en todas sus posibles formas. Un galpon convertido en un espacio para el encuentro de personas con ganas de aprender y enseñar.',
+      content: '"CECAM surgió en 2017 de la visión colectiva de un grupo de amigos apasionados por el movimiento. Es un espacio dedicado al crecimiento, intercambio y fomento del movimiento y el arte en todas sus expresiones. Lo que antes era un simple galpón, hoy se ha transformado en un punto de encuentro donde personas entusiastas confluyen para compartir conocimientos y aprendizajes.',
       size: 'large'
     },
     {
