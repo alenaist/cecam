@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './page.module.scss';
+import { Resend } from 'resend';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -28,13 +29,27 @@ const ContactPage = () => {
     try {
       // Here you would typically send the data to your backend
       // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubmitStatus({
-        type: 'success',
-        message: '¡Gracias por tu mensaje! Te contactaremos pronto.'
+
+
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: '', email: '', message: '' });
+      const data = await response.json();
+
+      
+      if(response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: '¡Gracias por tu mensaje! Te contactaremos pronto.'
+        });
+        setFormData({ name: '', email: '', message: '' });
+      }
+      
+      
+
     } catch (error) {
       setSubmitStatus({
         type: 'error',
